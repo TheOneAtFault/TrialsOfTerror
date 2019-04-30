@@ -11,14 +11,13 @@ namespace I.R.T.A.D
         static void Main(string[] args)
         {
             var command = ChooseProgram();
-
+            var input = "";
             while (command.ToLower() != "exit")
             {
                 switch (command.ToLower())
                 {
                     case "reverseint":
-
-                        var input = "";
+                        input = "";
 
                         while (input.ToLower() != "back")
                         {
@@ -36,6 +35,25 @@ namespace I.R.T.A.D
 
                         command = ChooseProgram();
 
+                        break;
+                    case "palindromenum":
+                        input = "";
+
+                        while (input.ToLower() != "back")
+                        {
+                            Console.WriteLine("Enter 'back' to return to application select':");
+                            Console.WriteLine("Enter Input:");
+                            input = Console.ReadLine();
+                            var result = ReverseInt.Run(Convert.ToInt32(input));
+                            Console.WriteLine(result);
+                            Console.WriteLine("Press any key to continue. . .");
+                            if (Console.ReadKey() != null)
+                            {
+                                Clear();
+                            }
+                        }
+
+                        command = ChooseProgram();
                         break;
                     default:
                         Console.WriteLine("Type 'exit' to close the program.");
@@ -69,6 +87,8 @@ namespace I.R.T.A.D
 
             Application item = new Application { id = 1, Name = "reverseint" };
             newList.Add(item);
+            Application item2 = new Application { id = 2, Name = "palindromenum" };
+            newList.Add(item2);
 
             return newList;
         }
