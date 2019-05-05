@@ -21,7 +21,7 @@ namespace I.R.T.A.D
 
                         while (input.ToLower() != "back")
                         {
-                            Console.WriteLine("Enter 'back' to return to application select':");
+                            Console.WriteLine("Enter 'back' to return to application select");
                             Console.WriteLine("Enter Input:");
                             input = Console.ReadLine();
                             var result = ReverseInt.Run(Convert.ToInt32(input));
@@ -41,10 +41,48 @@ namespace I.R.T.A.D
 
                         while (input.ToLower() != "back")
                         {
-                            Console.WriteLine("Enter 'back' to return to application select':");
+                            Console.WriteLine("Enter 'back' to return to application select");
                             Console.WriteLine("Enter Input:");
                             input = Console.ReadLine();
                             var result = ReverseInt.Run(Convert.ToInt32(input));
+                            Console.WriteLine(result);
+                            Console.WriteLine("Press any key to continue. . .");
+                            if (Console.ReadKey() != null)
+                            {
+                                Clear();
+                            }
+                        }
+
+                        command = ChooseProgram();
+                        break;
+                    case "romantoint":
+                        input = "";
+
+                        while (input.ToLower() != "back")
+                        {
+                            Console.WriteLine("Enter 'back' to return to application select");
+                            Console.WriteLine("Enter Input:");
+                            input = Console.ReadLine();
+                            var result = ReverseInt.Run(Convert.ToInt32(input));
+                            Console.WriteLine(result);
+                            Console.WriteLine("Press any key to continue. . .");
+                            if (Console.ReadKey() != null)
+                            {
+                                Clear();
+                            }
+                        }
+
+                        command = ChooseProgram();
+                        break;
+                    case "checkprefix":
+                        input = "";
+
+                        while (input.ToLower() != "back")
+                        {
+                            Console.WriteLine("Enter 'back' to return to application select");
+                            Console.WriteLine("Enter Input seperated with a comma(,):");
+                            input = Console.ReadLine();
+                            var result = CheckPrefix.Run(input.Split(','));
                             Console.WriteLine(result);
                             Console.WriteLine("Press any key to continue. . .");
                             if (Console.ReadKey() != null)
@@ -89,6 +127,10 @@ namespace I.R.T.A.D
             newList.Add(item);
             Application item2 = new Application { id = 2, Name = "palindromenum" };
             newList.Add(item2);
+            Application item3 = new Application { id = 3, Name = "romantoint" };
+            newList.Add(item3);
+            Application item4 = new Application { id = 4, Name = "checkprefix" };
+            newList.Add(item4);
 
             return newList;
         }
