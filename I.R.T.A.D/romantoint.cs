@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace I.R.T.A.D
 {
-    class romantoint
+    class RomanToInt
     {
         public static int Run(string input)
         {

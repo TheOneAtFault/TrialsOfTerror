@@ -93,8 +93,29 @@ namespace I.R.T.A.D
 
                         command = ChooseProgram();
                         break;
+                    case "checkparentheses":
+                        input = "";
+
+                        while (input.ToLower() != "back")
+                        {
+                            Console.WriteLine("Enter 'back' to return to application select");
+                            Console.WriteLine("Enter Input:");
+                            input = Console.ReadLine();
+                            var result = CheckPrefix.Run(input);
+                            Console.WriteLine(result);
+                            Console.WriteLine("Press any key to continue. . .");
+                            if (Console.ReadKey() != null)
+                            {
+                                Clear();
+                            }
+                        }
+
+                        command = ChooseProgram();
+                        break;
                     default:
-                        Console.WriteLine("Type 'exit' to close the program.");
+                        Clear();
+                        command = ChooseProgram();
+                        Console.WriteLine("No such program found. \nPlease select a program from the list. \n-Type 'exit' to close the program.");
                         command = Console.ReadLine();
                         break;
                 }
@@ -103,6 +124,7 @@ namespace I.R.T.A.D
 
         public static string ChooseProgram()
         {
+            Console.WriteLine("Programs to choose from:");
             //Get Application List
             var ListOfApplications = ApplicationList();
             foreach (var item in ListOfApplications)
@@ -131,6 +153,8 @@ namespace I.R.T.A.D
             newList.Add(item3);
             Application item4 = new Application { id = 4, Name = "checkprefix" };
             newList.Add(item4);
+            Application item5 = new Application { id = 5, Name = "checkparentheses" };
+            newList.Add(item5);
 
             return newList;
         }
