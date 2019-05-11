@@ -101,7 +101,7 @@ namespace I.R.T.A.D
                             Console.WriteLine("Enter 'back' to return to application select");
                             Console.WriteLine("Enter Input:");
                             input = Console.ReadLine();
-                            var result = CheckPrefix.Run(input);
+                            var result = CheckParentheses.Run(input);
                             Console.WriteLine(result);
                             Console.WriteLine("Press any key to continue. . .");
                             if (Console.ReadKey() != null)
